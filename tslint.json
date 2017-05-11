@@ -1,0 +1,18 @@
+{
+  "rulesDirectory": [
+  ],
+  "rules":{
+    "class-name": true,
+    "curly": true,
+    "indent": [true, "spaces"],
+    "no-trailing-whitespace": true,
+    "no-unused-expression": true,
+    "quotemark": [true, "single"],
+    "radix": true,
+    "semicolon": [true, "always"],
+    "whitespace": [
+      true, "check-branch", "check-decl", "check-module", "check-operator",
+      "check-separator", "check-type", "check-typecast"
+    ]
+  }
+}
