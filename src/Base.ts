@@ -70,7 +70,14 @@ export class Base {
     const unit = CurrencyUnit[currency];
     if (!unit) { throw new Error('Unsupported currency'); }
     amount *= unit;
-    if (amount % 1 !== 0) { throw new Error('Invalid amount'); }
+    if (amount % 1 !== 0) {
+      let newAmount = Math.round(amount);
+      if (this.equalDecimal(newAmount, amount)) {
+        amount = newAmount;
+      } else {
+        throw new Error('Invalid amount');
+      }
+    }
     return amount;
   }
 
@@ -84,6 +91,10 @@ export class Base {
 
     amount /= unit;
     return amount;
+  }
+
+  equalDecimal (x, y) {
+    return Math.abs(x - y) < 0.000001;
   }
 
   supportedLocale(locale) {
