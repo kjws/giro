@@ -1,7 +1,6 @@
 import { STATUS_CODES } from 'http';
 
 import { Request, Response, NextFunction } from 'express';
-import * as FormData from 'form-data';
 import fetch from 'node-fetch';
 
 import { Base, BaseOptions } from './Base';
