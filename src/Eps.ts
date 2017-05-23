@@ -8,11 +8,11 @@ import { ErrorCode } from './ErrorCode';
 
 export interface EpsOptions extends BaseOptions { }
 
-export interface CheckBankstatusParams {
+export interface EpsCheckBankstatusParams {
   bic: string;
 }
 
-export interface CheckBankstatusResult {
+export interface EpsCheckBankstatusResult {
   rc: ErrorCode;
   msg: string;
   bankcode?: number;
@@ -50,7 +50,7 @@ export class Eps extends Base {
     super(options);
   }
 
-  checkBankstatus(params: CheckBankstatusParams): Promise<CheckBankstatusResult> {
+  checkBankstatus(params: EpsCheckBankstatusParams): Promise<EpsCheckBankstatusResult> {
     const API_URL = 'https://payment.girosolution.de/girocheckout/api/v2/eps/bankstatus';
     const PROPERTIES = ['bic'];
 

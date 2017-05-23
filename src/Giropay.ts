@@ -8,11 +8,11 @@ import { ErrorCode } from './ErrorCode';
 
 export interface GiropayOptions extends BaseOptions { }
 
-export interface CheckBankstatusParams {
+export interface GiropayCheckBankstatusParams {
   bic: string;
 }
 
-export interface CheckBankstatusResult {
+export interface GiropayCheckBankstatusResult {
   rc: ErrorCode;
   msg: string;
   bankcode?: number;
@@ -63,7 +63,7 @@ export class Giropay extends Base {
     super(options);
   }
 
-  checkBankstatus(params: CheckBankstatusParams): Promise<CheckBankstatusResult> {
+  checkBankstatus(params: GiropayCheckBankstatusParams): Promise<GiropayCheckBankstatusResult> {
     const API_URL = 'https://payment.girosolution.de/girocheckout/api/v2/giropay/bankstatus';
     const PROPERTIES = ['bic'];
 
